@@ -15,7 +15,6 @@ char* read_from_file (const char* filename, size_t length)
 
 	/* Allocate the buffer. */
 	buffer = (char*) malloc (length);
-	
 	if (buffer == NULL)
 		return NULL;
 
@@ -42,6 +41,6 @@ char* read_from_file (const char* filename, size_t length)
 	/* Everything’s fine. Close the file and return the buffer. */
 	close (fd);
 
-	return;
+	return buffer;
 }
 

@@ -22,6 +22,7 @@ int better_sleep (double sleep_time)
     signal, place the remaining time left to sleep back into tv. 
   */
   int rval = nanosleep (&tv, &tv);
+  
   if (rval == 0)
    /* Completed the entire sleep time; all done. */
    return 0;
@@ -32,5 +33,6 @@ int better_sleep (double sleep_time)
    /* Some other error; bail out. */
    return rval;
  }
+ 
  return 0;
 }

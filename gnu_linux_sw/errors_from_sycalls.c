@@ -1,3 +1,5 @@
+#include <errno.h>
+
 rval = chown (path, user_id, -1);
 
 if (rval != 0) {
