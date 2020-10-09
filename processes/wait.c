@@ -16,6 +16,7 @@ int spawn (char* program, char** arg_list)
 	}
 	else {
 		execvp (program, arg_list);
+		
 		/* returns only if an error occurs. */
 		fprintf (stderr, "an error occurred in execvp\n");
 		abort ();
