@@ -1,9 +1,13 @@
 #include <stdio.h> 
-#include <signal.h> 
- 
+#include <signal.h>
+#include <stdlib.h>
+#include <unistd.h>
+
 int beeps = 0; 
+
 /* SIGALRM handler */
-void handler(int sig) { 
+void handler(int sig)
+{ 
   printf("BEEP\n"); 
   fflush(stdout); 
  
@@ -14,11 +18,13 @@ void handler(int sig) {
   } 
 } 
 
-main() { 
+int main()
+{ 
   signal(SIGALRM, handler);  
-  alarm(1); /* send SIGALRM in
-               1 second */
- 
+
+  /* send SIGALRM in 1 second */
+  alarm(1); 
+
   while (1) { 
     /* handler returns here */ 
   } 

@@ -20,8 +20,7 @@ int main ()
 	if (pid == (pid_t) 0) {
 
 		/* This is the child process. Close our copy of the write end of
-		the file descriptor. */
-		close (fds[1]);
+		the file descriptor. */		close (fds[1]);
 
 		/* Connect the read end of the pipe to standard input. */
 		dup2 (fds[0], STDIN_FILENO);

@@ -1,5 +1,4 @@
 // Listing 3.5 (sigusr1.c) Using a Signal Handler
-
 #include <signal.h>
 #include <stdio.h>
 #include <string.h>
@@ -22,8 +21,11 @@ int main ()
 
 	/* Do some lengthy stuff here. */
 	/* ... */
-	printf (“SIGUSR1 was raised %d times\n”, sigusr1_count);
+	kill(getpid(), SIGUSR1);
+	/* ... */
+	kill(getpid(), SIGUSR1);
+
+	printf ("SIGUSR1 was raised %d times\n", sigusr1_count);
 
 	return 0;
-
 }

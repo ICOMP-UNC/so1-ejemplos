@@ -5,17 +5,21 @@
 int main()
 {
     char *s, buf[1024];
+    
     int fds[2];
     
     s = "hello world\n";
     
     pipe(fds);
 
+    // sleep(60);
+    // check fds in /proc
+
     // write to pipe's input
-    write(fds[1], s, strlen(s));
+    write(fds[1], s, strlen(s));   //-> |
     
     // write to pipe's output
-    read(fds[0], buf, strlen(s));
+    read(fds[0], buf, strlen(s));  // | -> buf
 
     printf("fds[0] = %d, fds[1] = %d\n", fds[0], fds[1]);
     
