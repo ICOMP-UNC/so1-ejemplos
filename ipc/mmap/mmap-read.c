@@ -18,8 +18,7 @@ int main (int argc, char* const argv[])
 	fd = open (argv[1], O_RDWR, S_IRUSR | S_IWUSR);
 	
 	/* Create the memory mapping. */
-	file_memory = mmap (0, FILE_LENGTH, PROT_READ | PROT_WRITE,
-	MAP_SHARED, fd, 0);
+	file_memory = mmap (0, FILE_LENGTH, PROT_READ | PROT_WRITE,	MAP_SHARED, fd, 0);
 	close (fd);
 	
 	/* Read the integer, print it out, and double it. */
@@ -31,7 +30,6 @@ int main (int argc, char* const argv[])
 	munmap (file_memory, FILE_LENGTH);
 
 	return 0;
-
 }
 
 /*

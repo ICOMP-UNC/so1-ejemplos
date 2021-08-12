@@ -14,6 +14,8 @@ void handler (int signal_number)
 
 int main ()
 {
+	// signal(SIGUSR1, handler);
+	
 	struct sigaction sa;
 	memset (&sa, 0, sizeof (sa));
 	sa.sa_handler = &handler;

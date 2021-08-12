@@ -6,7 +6,6 @@ typedef struct
     char* field2;
 } SomeStruct;
 
-
 void do_stuff(SomeStruct * somestruct)
 {
     // do something with SomeStruct

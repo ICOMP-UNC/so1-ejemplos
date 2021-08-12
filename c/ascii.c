@@ -1,4 +1,15 @@
 #include <stdio.h>
+
+/*
+In C programming, a character variable holds an ASCII value 
+(an integer number between 0 and 127) rather than character itself.
+
+Example Output:
+---------------
+Enter a character: G
+ASCII value of G = 71
+*/
+
 int main()
 {
     char c;

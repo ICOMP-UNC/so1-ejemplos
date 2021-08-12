@@ -15,7 +15,7 @@ void handler(int sig)
   else { 
     printf("BOOM!\n"); 
     exit(0); 
-  } 
+  }
 } 
 
 int main()
@@ -23,7 +23,7 @@ int main()
   signal(SIGALRM, handler);  
 
   /* send SIGALRM in 1 second */
-  alarm(1); 
+  alarm(5); 
 
   while (1) { 
     /* handler returns here */ 
