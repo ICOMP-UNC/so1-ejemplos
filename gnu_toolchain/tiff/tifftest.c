@@ -38,7 +38,7 @@ $ ldd a.out
 	libpthread.so.0 => /lib/x86_64-linux-gnu/libpthread.so.0 (0x00007fc83423a000)
 */
 
-// (base) pablo@pablo:~/so1/clases/2_gnu_toolchain/examples/tiff$ gcc tifftest.c -ltiff
+// (base) pablo@pablo:~/so1/clases/2_gnu_toolchain/examples/tiff$ gcc tifftest.c
 // tifftest.c: In function ‘main’:
 // tifftest.c:18:2: error: unknown type name ‘TIFF’
 //    18 |  TIFF* tiff;
@@ -52,3 +52,6 @@ $ ldd a.out
 // tifftest.c:20:2: warning: implicit declaration of function ‘TIFFClose’ [-Wimplicit-function-declaration]
 //    20 |  TIFFClose (tiff);
 //       |  ^~~~~~~~~
+
+// link against libtiff.so
+// (base) pablo@pablo:~/so1/clases/2_gnu_toolchain/examples/tiff$ gcc tifftest.c -ltiff

@@ -1,10 +1,7 @@
-// s.d is a flexible array member
-struct s { 
-	int n;
-	double d[];
-};
-
 /*
+struct with flexible array member
++++++++++++++++++++++++++++++++++
+
 Initialization, sizeof, and the assignment operator
 ignore the flexible array member. 
 
@@ -13,14 +10,19 @@ last member is a structure with flexible array member)
 cannot appear as array elements or as members of other structures.
 */
 
+// s.d is a flexible array member
+struct s { 
+	int n;
+	double d[];
+};
+
 int main()
 {
-
 	// OK: d is as if double d[1], but undefined behaviour (UB) to access
 	struct s t1 = {0};
 
 	// error: non-static initialization of a flexible array member
-	struct s t2 = {0,1};
+	struct s t2 = {0, 1};
 
 	// error: initialization ignores flexible array
 	// error: non-static initialization of a flexible array member

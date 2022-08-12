@@ -1,0 +1,75 @@
+echo $SHELL
+cd
+pwd
+
+ls
+
+## listar directorio
+ls -d 
+
+# print the index number of each file (inodo)
+# A cada archivo se le asigna un indice unico
+ls -i
+
+mkdir
+
+mkdir -p
+
+touch
+
+# echo y redireccion
+echo "header" > template
+cp
+mv
+
+# see file content
+cat
+less
+more
+head
+
+# enlace permanente (nivel inodo)
+# no soporta directorios y otras limitaciones
+ln txt tx1
+
+# enlace simbolico (referencia a traves del nombre, en vez de hacerlo por el inodo)
+# puede ser a directorios
+ln -s txt tx2
+
+rm
+
+# iterativo
+rm -i
+
+# rm iterativo por alias
+alias rm = "rm -i"
+
+# solo borra dirs vacios
+rmdir
+
+rm -rf 
+
+
+# Pipe
+# usuarios usando el sistema en orden alfabetico
+who | sort
+
+# OR Condition
+test -f car.c && echo "is a file"
+
+# AND Condition
+test  -d car.c || echo "not a dir"
+
+# intercambiar el nombre de dos archivos 
+# usando repetidamente el comando mv
+mv arch1 aux; mv ach2 arch1; mv aux arch1
+
+# imprime dentro de una hora, en orden alfabetico, de entre las primeras
+# 100 lineas de arc las lineas que contengan la palabra Warning, 
+# comprobando antes que arc es accesible.
+# El cojunto de comandos se ejecuta en segundo plano
+(sleep 3600; test -r arc && head -100 arc | grep Warning | sort ) &
+
+# Command output as argument
+# remove files filtered by grep
+rm `grep  -l <match> *`

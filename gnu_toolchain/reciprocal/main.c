@@ -21,7 +21,8 @@ int main (int argc, char **argv)
 	int j;
 	j = atoi(argv[1]);
 	printf("The reciprocal of %d is %g\n", j, reciprocal(j));
-	return 0;
+	
+  return 0;
 }
 
 

@@ -2,6 +2,10 @@
 
 /*
 Compute the length of a string manually without using strlen() function.
+
+Example:
+	Enter a string: Sistemas Operativos I
+	Length of string: 21
 */
 int main()
 {

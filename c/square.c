@@ -1,3 +1,8 @@
+/*
+Square root of a number (square.c)
+++++++++++++++++++++++++++++++++++
+*/
+
 #include <stdio.h>
 #include <math.h>
 
@@ -15,7 +20,11 @@ int main()
   return 0;
 }
 
-// Output
-// ------
-// Enter a number: 12
-// Square root of 12.00 = 3.46
+/*
+
+Output
+------
+Enter a number: 12
+Square root of 12.00 = 3.46
+
+*/

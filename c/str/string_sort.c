@@ -1,6 +1,42 @@
 #include<stdio.h>
 #include <string.h>
 
+/*
+Sort Strings in Dictionary Order
+++++++++++++++++++++++++++++++++
+
+Code a program that sorts N strings (entered by the user)
+in lexicographical order (dictionary order).
+
+Example Output:
+--------------
+    
+    Enter 10 words:
+    C
+    C++
+    Java
+    PHP
+    Python
+    Perl
+    Ruby
+    R
+    JavaScript
+    PHP
+
+    In lexicographical order: 
+    C
+    C++
+    Java
+    JavaScript
+    PHP
+    PHP
+    Perl
+    Python
+    R
+    Ruby
+
+*/
+
 int main()
 {
     int i, j;

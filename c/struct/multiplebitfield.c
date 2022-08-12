@@ -1,5 +1,13 @@
 #include <stdio.h>
 
+/*
+bit field
++++++++++
+
+Multiple adjacent bit fields are permitted
+to be (and usually are) packed together
+*/
+
 struct S {
     // will usually occupy 4 bytes:
     // 5 bits: value of b1

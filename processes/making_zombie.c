@@ -15,7 +15,7 @@ int main ()
 
 	if (child_pid > 0) {
 		/* This is the parent process. Sleep for a minute. */
-		sleep (30);
+		sleep (60);
 	}
 
 	else {

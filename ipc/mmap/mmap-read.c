@@ -35,6 +35,7 @@ int main (int argc, char* const argv[])
 /*
 	Here’s an example of running these example programs. It maps the file
 	/tmp/integer-file .
+
 	% ./mmap-write /tmp/integer-file
 	% cat /tmp/integer-file
 	42
