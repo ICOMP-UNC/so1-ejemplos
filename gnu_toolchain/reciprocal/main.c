@@ -9,7 +9,14 @@ warning: implicit declaration of function ‘atoi’ [-Wimplicit-function-declar
 
 #include "reciprocal.hpp"
 
-
+/*
+* Compute the reciprocal of an integer
+*
+* Project with one C++ source file (reciprocal.cpp)
+* and one C source file (main.c).
+* These two files are supposed to be compiled and then
+* linked together to produce a program called reciprocal.
+*/
 int main (int argc, char **argv)
 {
 

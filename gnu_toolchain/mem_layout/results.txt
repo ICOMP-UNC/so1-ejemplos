@@ -1,0 +1,10 @@
+$ size ml{0..5}
+
+
+   text     data      bss      dec      hex  filename
+   1418      544        8     1970      7b2  ml0
+   1418      544        8     1970      7b2  ml1
+   1418      548        4     1970      7b2  ml2
+   1418      544       16     1978      7ba  ml3
+   1418      548       12     1978      7ba  ml4
+   1418      552        8     1978      7ba  ml5

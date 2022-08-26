@@ -9,7 +9,7 @@ Example:
 */
 int main()
 {
-	char s[1000];
+	char s[1000]; //1KB
 	unsigned i;
 
     printf("Enter a string: ");

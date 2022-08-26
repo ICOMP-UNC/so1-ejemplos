@@ -54,4 +54,4 @@ $ ldd a.out
 //       |  ^~~~~~~~~
 
 // link against libtiff.so
-// (base) pablo@pablo:~/so1/clases/2_gnu_toolchain/examples/tiff$ gcc tifftest.c -ltiff
+// tiff$ gcc tifftest.c -ltiff

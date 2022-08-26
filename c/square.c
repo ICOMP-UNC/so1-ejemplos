@@ -21,6 +21,9 @@ int main()
 }
 
 /*
+Compile
+--------
+gcc square.c -lm -o square
 
 Output
 ------
@@ -28,3 +31,5 @@ Enter a number: 12
 Square root of 12.00 = 3.46
 
 */
+
+

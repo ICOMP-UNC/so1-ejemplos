@@ -60,7 +60,7 @@ int main()
 
     printf("\nIn lexicographical order: \n");
     for (i=0; i<10; ++i) {
-        puts(str[i]);
+        puts(str[i]);  // printf("%s\n", str[i]);
     }
     return 0;
 }

@@ -8,6 +8,7 @@ void critical_function()
     printf("critical_function() starts \n");
     printf("Press enter to stop critical_function \n");
     while (1) {
+        printf("Press\n");
         if (getchar())
             break;
     }
@@ -21,7 +22,7 @@ int main()
     clock_t t;
     t = clock();
     critical_function();
-    t = clock() - t;
+    clock_t dt = clock() - t;
 
     /*
     * Clock ticks per second
@@ -29,7 +30,7 @@ int main()
     * Clock ticks are units of time of a constant but system-specific length, as those returned by function clock.
     * Dividing a count of clock ticks by this expression yields the number of seconds.
     */
-    double time_taken_sec = ((double)t)/CLOCKS_PER_SEC;
+    double time_taken_sec = ((double)dt)/CLOCKS_PER_SEC;
  
     printf("CLOCKS_PER_SEC %ld \n", CLOCKS_PER_SEC);
     printf("critical_function() took %f seconds to execute \n", time_taken_sec);
