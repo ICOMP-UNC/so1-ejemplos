@@ -44,3 +44,17 @@ char* read_from_file (const char* filename, size_t length)
 	return buffer;
 }
 
+
+// int main (argc, argv) {
+
+// 	const char* filename = "/proc/cpuinfo";
+// 	size_t length = 10;
+
+// 	char* str = read_from_file (filename, length);
+
+// 	printf ("%s/n", str);
+
+// 	return 0;
+// }
+
+

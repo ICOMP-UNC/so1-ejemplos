@@ -56,7 +56,7 @@ int main (int argc, char* argv[])
 	do {
 		next_option = getopt_long (argc, argv, short_options, long_options, NULL);
 	
-		printf ("next_option: %c optind: %d\n", next_option, optind);
+		// printf ("next_option: %c optind: %d\n", next_option, optind);
 		switch (next_option) {
 			/* -h or --help */
 			case 'h': 

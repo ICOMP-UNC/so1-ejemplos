@@ -7,6 +7,10 @@ int main ()
 {
 	char* server_name = getenv ("SERVER_NAME");
 	
+	// char* user = getenv ("USER");
+	// path = "/home/"
+	// strcat(path, user)
+
 	/* The SERVER_NAME environment variable was not set. Use the default. */
 	if (server_name == NULL)
 		server_name = "server.my-company.com";

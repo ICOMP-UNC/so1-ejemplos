@@ -20,11 +20,13 @@ warning: implicit declaration of function ‘atoi’ [-Wimplicit-function-declar
 int main (int argc, char **argv)
 {
 
+  /*
 	if (argc < 2) {
                fprintf(stderr, "Usage: %s str [base]\n", argv[0]);
                exit(EXIT_FAILURE);
     }
-
+  */
+  
 	int j;
 	j = atoi(argv[1]);
 	printf("The reciprocal of %d is %g\n", j, reciprocal(j));

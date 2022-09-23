@@ -15,10 +15,25 @@ int spawn (char* program, char** arg_list)
 		return child_pid;
 	}
 	else {
+		printf ("Child id %d - before execvp\n", getpid());
+
 		execvp (program, arg_list);
+		
 		/* returns only if an error occurs. */
 		fprintf (stderr, "an error occurred in execvp\n");
 		abort ();
 	}
 }
 
+
+int main()
+{
+
+	char *const args[] = {"ls", "-l", "/", NULL};
+
+	spawn ("ls", (char**) args);
+
+	printf ("Parent process %d - bye \n", getpid());
+
+	return 0;
+}
