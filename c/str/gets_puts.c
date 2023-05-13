@@ -17,7 +17,8 @@ int main()
     printf("Enter name: ");
     
     // read string from user
-    gets(name);     
+    fgets(name, sizeof(name), stdin);
+    //gets(name);     
 
     printf("Name: ");
     

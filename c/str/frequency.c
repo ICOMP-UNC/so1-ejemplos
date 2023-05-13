@@ -14,7 +14,8 @@ int main()
   int i, frequency = 0;
 
   printf("Enter a string: ");
-  gets(str);
+  fgets(str, sizeof(str), stdin); // read string from user
+  // gets(str); // deprecated
 
   printf("Enter a character to find the frequency: ");
   scanf("%c",&ch);
