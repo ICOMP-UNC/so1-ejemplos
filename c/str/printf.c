@@ -8,8 +8,7 @@ fprintf(stdout, "pi = %.5f\n", 4 * atan(1.0));
 // weekday and month are pointers to strings:
 
 #include <stdio.h>
-fprintf(stdout, "%s, %s %d, %.2d:%.2d\n",
-       weekday, month, day, hour, min);
+fprintf(stdout, "%s, %s %d, %.2d:%.2d\n", weekday, month, day, hour, min);
 
 // Many  countries use the day-month-year order.  Hence, an international‐
 // ized version must be able to print the arguments in an order  specified
