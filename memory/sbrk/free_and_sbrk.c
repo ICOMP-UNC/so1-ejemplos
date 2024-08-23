@@ -2,6 +2,9 @@
 +
 +   Test if free(3) actually lowers the program break.
 +
++   Demonstrate what happens to the program break when memory is freed.
++
++
 +   Usage: free_and_sbrk num-allocs block-size [step [min [max]]]
 +
 +   Try: free_and_sbrk 1000 10240 2 1 1000

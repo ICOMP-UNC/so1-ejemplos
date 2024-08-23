@@ -15,7 +15,7 @@ int main()
 
 void p3()
 {
-   <error checking code>
+   //<error checking code>
    if (error)
       longjmp(buf, 1)
 } 

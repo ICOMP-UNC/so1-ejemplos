@@ -6,6 +6,8 @@
 int main()
 {
     pid_t pid;
+
+
     int x = 1;
     
     pid = fork();

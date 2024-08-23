@@ -4,11 +4,10 @@
 
 #include <sys/shm.h>
 
-
 if( ( fildes = open( filename , 2 ) ) < 0 )
 {
-        printf( "cannot open file\n" );
-        exit(1);
+      printf( "cannot open file\n" );
+      exit(1);
 }
 
 // Map the file to a segment as copy-on-write, with the shmat subroutine: 

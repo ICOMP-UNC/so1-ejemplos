@@ -9,7 +9,9 @@ int main()
 {
 
    if (fork() == 0) {
-      execl("/usr/bin/touch", "touch", "foo", NULL);
+      execl("/usr/bin/touch", "touch", "foo", NULL); 
+
+      abort();
       execl("/usr/bin/cp", "cp", "foo", "bar", NULL);
    }
 

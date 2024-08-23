@@ -31,7 +31,11 @@ int main()
 
 	char *const args[] = {"ls", "-l", "/", NULL};
 
-	spawn ("ls", (char**) args);
+	// ok, it does not return
+	spawn ("ls", (char**) args); 
+
+	// fail, it returns
+	// spawn ("noexistingcmd", (char**) args);
 
 	printf ("Parent process %d - bye \n", getpid());
 
