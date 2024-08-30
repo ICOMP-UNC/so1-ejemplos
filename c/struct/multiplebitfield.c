@@ -23,3 +23,6 @@ int main(void)
     // prints 4
     printf("%zu\n",sizeof(struct S));
 }
+
+
+// TODO:: agregar cast de dato a struct

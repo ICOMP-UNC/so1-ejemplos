@@ -1,6 +1,6 @@
-# Repaso de C
+## Repaso de C
 
-En esta sección encontrarás ejemplos de código para repasar algunos conceptos de C que te van a servir a lo largo de la materia.
+En esta sección encontrarás ejemplos de código para repasar conceptos de C que te van a servir a lo largo de la materia.
 
 ### Para compilar los ejemplos:
 ```

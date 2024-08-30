@@ -28,7 +28,7 @@ int main(void)
 
 // void fn() {
 
-//     volatile int counter=0;
+//    volatile int counter=0;
 
 //     while(counter < 10) {
 //     while(TRUE) {
