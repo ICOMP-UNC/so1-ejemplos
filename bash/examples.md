@@ -1,74 +1,62 @@
 # basic examples
 
 ```sh
-echo $SHELL
-cd
-pwd
+echo $SHELL   # muestra el shell en uso
+cd            # ir al home
+cd ..         # subir un nivel
+cd -          # volver al directorio anterior
+pwd           # ruta actual
 ```
 
 # list content
 
 ```sh
-ls
-
-## listar directorio
-ls -d 
-
-# print the index number of each file (inodo)
-# A cada archivo se le asigna un indice unico
-ls -i
+ls            # lista archivos
+ls -lh        # lista con tamaños legibles
+ls -d */      # lista solo directorios
+ls -i         # muestra inodos (ID único de archivo)
 ```
 
-# Create a directory
+# Create and manipulate files
 
 ```sh
-mkdir
-mkdir -p
+mkdir proyectos          # crear carpeta
+mkdir -p dir/subdir      # crear estructura anidada
+touch notas.txt          # archivo vacío
+echo "texto" > archivo   # escribir en archivo
+echo "más texto" >> archivo # añadir texto
+cp archivo copia.txt     # copiar
+mv archivo nuevo.txt     # mover/renombrar
 ```
+# See content
 
 ```sh
-touch
+cat archivo.txt          # mostrar completo
+head archivo.txt         # primeras líneas
+tail archivo.txt         # últimas líneas
+less archivo.txt         # navegación interactiva
 ```
-# echo y redireccion
+
+# Links
 
 ```sh
-echo "header" > template
-cp
-mv
-```
-
-# see file content
-
-```sh
-cat
-less
-more
-head
-```
-
 # enlace permanente (nivel inodo)
 # no soporta directorios y otras limitaciones
-ln txt tx1
+ln archivo.txt enlace1   
 
 # enlace simbolico (referencia a traves del nombre, en vez de hacerlo por el inodo)
 # puede ser a directorios
-ln -s txt tx2
+ln -s archivo.txt enlace2
+```
 
 # Remove
 
 ```shell
-rm
-
-# iterativo
-rm -i
-
-# rm iterativo por alias
-alias rm = "rm -i"
-
-# solo borra dirs vacios
-rmdir
-
-rm -rf 
+rm archivo.txt           # borrar archivo
+rm -i archivo.txt        # borrar con confirmación (iterativo)
+rmdir carpeta            # borrar carpeta vacía
+rm -rf carpeta/          # borrar todo dentro
+alias rm = "rm -i"       # rm iterativo por alias
 ```
 
 To delete all files and directories, including hidden ones, 
@@ -83,11 +71,11 @@ find /path/to/challenge_directory -mindepth 1 -delete
 # Pipe
 
 ```sh
-# usuarios usando el sistema en orden alfabetico
-who | sort
+who | sort                # usuarios usando el sistema en orden alfabetico
+ps aux | grep firefox     # buscar procesos
 ```
 
-# OR Condition
+# Conditions
 
 ```sh
 test -f car.c && echo "is a file"
@@ -122,12 +110,13 @@ mv arch1 aux; mv ach2 arch1; mv aux arch1
 rm `grep  -l <match> *`
 ```
 
-How to reboot or shut down using the command line:
+# How to reboot or shut down using the command line:
 
-    shutdown
-    reboot
-    halt
-    poweroff
+```sh
+shutdown   # apagar
+reboot     # reiniciar
+halt       # detener
+poweroff   # apagar inmediato
+```
 
-https://zpenterprises.co/how-to-reboot-or-shut-down-linux-using-the-command-line/
 
