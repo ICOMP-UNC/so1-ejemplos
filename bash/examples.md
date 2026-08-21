@@ -87,29 +87,6 @@ test -f car.c && echo "is a file"
 test  -d car.c || echo "not a dir"
 ```
 
-# intercambiar el nombre de dos archivos 
-# usando repetidamente el comando mv
-
-```sh
-mv arch1 aux; mv ach2 arch1; mv aux arch1
-```
-
-# imprime dentro de una hora, en orden alfabetico, de entre las primeras
-# 100 lineas de arc las lineas que contengan la palabra Warning, 
-# comprobando antes que arc es accesible.
-# El cojunto de comandos se ejecuta en segundo plano
-
-```sh
-(sleep 3600; test -r arc && head -100 arc | grep Warning | sort ) &
-```
-
-# Command output as argument
-
-```sh
-# remove files filtered by grep
-rm `grep  -l <match> *`
-```
-
 # How to reboot or shut down using the command line:
 
 ```sh
@@ -117,6 +94,53 @@ shutdown   # apagar
 reboot     # reiniciar
 halt       # detener
 poweroff   # apagar inmediato
+```
+
+# Find
+
+## Find files
+
+```
+find /path/to/dir -name "archivo.txt"   # busca un archivo específico
+find . -type f -name "*.c"              # busca todos los archivos .c en el directorio actual
+find . -type d -name "proyectos"        # busca directorios llamados proyectos
+find . -type f -size +1M                # busca archivos mayores a 1 MB
+```
+
+## Find inside files:
+
+```
+grep "palabra" archivo.txt              # busca coincidencias en un archivo
+grep -r "main" .                        # busca recursivamente en todos los archivos
+grep -n "Warning" archivo.log           # muestra número de línea donde aparece
+```
+
+## Combine find with actions
+
+```
+find . -type f -name "*.log" -delete    # borrar todos los archivos .log
+grep -rl "ERROR" . | xargs rm           # borrar archivos que contienen la palabra ERROR
+```
+
+# Advanced
+
+## intercambiar el nombre de dos archivos usando repetidamente el comando mv
+
+```sh
+mv arch1 aux; mv ach2 arch1; mv aux arch1
+```
+
+## imprime dentro de una hora, en orden alfabetico, de entre las primeras 100 lineas de arc las lineas que contengan la palabra Warning, comprobando antes que arc es accesible. El cojunto de comandos se ejecuta en segundo plano
+
+```sh
+(sleep 3600; test -r arc && head -100 arc | grep Warning | sort ) &
+```
+
+## Command output as argument
+
+```sh
+# remove files filtered by grep
+rm `grep  -l <match> *`
 ```
 
 
