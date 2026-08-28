@@ -3,7 +3,7 @@ CC = gcc
 STRUCT = struct
 STR = str
 
-all: ascii delta_time padding_example printable square car multiplebitfield threebitfield frequency gets_puts str_upper string_sort strlen
+all: ascii delta_time padding_example printable square volatile volatile_signals volatile_signals_bad car multiplebitfield threebitfield frequency gets_puts str_upper string_sort strlen
 
 ascii: 
 	$(CC) $@.c -o $@
@@ -19,6 +19,15 @@ printable:
 
 square:
 	$(CC) $@.c -lm -o $@
+
+volatile:
+	$(CC) $@.c -o $@
+
+volatile_signals:
+	$(CC) $@.c -o $@
+
+volatile_signals_bad:
+	$(CC) $@.c -o $@
 
 car:
 	$(CC) $(STRUCT)/$@.c -o $(STRUCT)/$@
@@ -50,8 +59,5 @@ strlen:
 #$(STRUCT)_with_flexible_array:
 #	$(CC) $(STRUCT)/$@.c -o $(STRUCT)/$@
 
-#volatile:
-#	$(CC) $@.c -o $@
-
 clean:
-	rm -rf ascii delta_time padding_example printable square $(STRUCT)/car $(STRUCT)/multiplebitfield $(STRUCT)/threebitfield $(STRUCT)/padding_example $(STR)/frequency $(STR)/gets_puts $(STR)/printf $(STR)/str_upper $(STR)/string_sort $(STR)/strlen 
+	rm -rf ascii delta_time padding_example printable square volatile volatile_signals volatile_signals_bad $(STRUCT)/car $(STRUCT)/multiplebitfield $(STRUCT)/threebitfield $(STRUCT)/padding_example $(STR)/frequency $(STR)/gets_puts $(STR)/printf $(STR)/str_upper $(STR)/string_sort $(STR)/strlen 
