@@ -4,7 +4,7 @@
 Compute the length of a string manually without using strlen() function.
 
 Example:
-	Enter a string: Sistemas Operativos I
+	Enter a string: Sistemas_Operativos_I
 	Length of string: 21
 */
 int main()
