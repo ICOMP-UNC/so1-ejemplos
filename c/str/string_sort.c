@@ -44,8 +44,9 @@ int main()
 
     printf("Enter 10 words:\n");
 
+
     for(i=0; i<10; ++i) {
-        scanf("%s[^\n]", str[i]);
+        scanf("%[^\n]", str[i]);
     }
     
     for (i=0; i<9; ++i) {
@@ -60,7 +61,8 @@ int main()
 
     printf("\nIn lexicographical order: \n");
     for (i=0; i<10; ++i) {
-        puts(str[i]);  // printf("%s\n", str[i]);
+        puts(str[i]);            // Accepts only one string and adds a newline
+    //  printf("%s\n", str[i]);     Accepts multiple data types, newline is added manually, more versatile
     }
     return 0;
 }

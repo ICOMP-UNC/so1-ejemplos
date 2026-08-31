@@ -7,7 +7,6 @@ gets() and puts()
 Functions gets() and puts() are two string functions
 	gets() to take string input from the user
 	puts() to display string output to the user
-
 */
 
 int main()
@@ -16,9 +15,9 @@ int main()
     
     printf("Enter name: ");
     
-    // read string from user
+    // read string from user until \n is encountered
     fgets(name, sizeof(name), stdin);
-    //gets(name);     
+    // gets(name);	Dangerous function, doesn't check for buffer overflow
 
     printf("Name: ");
     
