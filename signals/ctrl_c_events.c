@@ -1,26 +1,32 @@
-#include <stdlib.h> 
+/* Habilita la API POSIX para que sigaction, signal y otras funciones
+   de señales queden declaradas de forma estándar en Linux. */
+#define _POSIX_C_SOURCE 200809L
+
+#include <signal.h>
 #include <stdio.h>
-#include <signal.h> 
-#include <unistd.h> 
+#include <unistd.h>
 
-static void handler(int sig)
+static volatile sig_atomic_t interrupted = 0;
+
+/* Handles Ctrl+C by setting a flag. */
+static void handle_sigint(int signum)
 {
-    printf("You think hitting ctrl-c will stop the bomb?\n");
-    sleep(2);
-    printf("Well...");
+    (void)signum;
+    interrupted = 1;
+    write(STDOUT_FILENO, "Ctrl+C received\n", 16);
+}
 
-    fflush(stdout);
-    sleep(1);
-    printf("OK\n");
-    exit(0);
-} 
+int main(void)
+{
+    /* Install the signal handler for SIGINT. */
+    signal(SIGINT, handle_sigint);
 
-// A program that reacts to externally generated events (ctrl-c)
-int main()
-{ 
-    /* installs ctl-c handler */
-    signal (SIGINT, handler);
+    while (!interrupted) {
+        puts("Waiting for Ctrl+C...");
+        sleep(1);
+    }
 
-    while (1) {
-    } 
+    puts("Program ended by signal.");
+    
+    return 0;
 }

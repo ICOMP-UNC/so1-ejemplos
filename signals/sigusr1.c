@@ -1,45 +1,35 @@
-// Listing 3.5 (sigusr1.c) Using a Signal Handler
+#define _POSIX_C_SOURCE 200809L
+
 #include <signal.h>
 #include <stdio.h>
-#include <string.h>
-#include <sys/types.h>
 #include <unistd.h>
 
-sig_atomic_t sigusr1_count = 0;
+static volatile sig_atomic_t sigusr1_count = 0;
 
-void handler (int signal_number)
+/* Counts the times SIGUSR1 is received. */
+static void handle_sigusr1(int signum)
 {
-	++sigusr1_count;
+    (void)signum;
+    ++sigusr1_count;
 }
 
-
-
-/*
-*  example shows: sigaction,  SIGUSR1 
-*/
-int main ()
+int main(void)
 {
-	// signal(SIGUSR1, handler);
-	
-	struct sigaction sa;
-	memset(&sa, 0, sizeof (sa));
-	
-	sa.sa_handler = &handler;
-	
+    struct sigaction sa;
 
-	sigaction(SIGUSR1, &sa, NULL);
+    /* Register the handling function. */
+    sa.sa_handler = handle_sigusr1;
+    sigemptyset(&sa.sa_mask);
+    sa.sa_flags = 0;
 
-	/* Do some lengthy stuff here. */
-	
-	/* ... */
-	
-	kill(getpid(), SIGUSR1);
-	
-	/* ... */
-	
-	kill(getpid(), SIGUSR1);
+    if (sigaction(SIGUSR1, &sa, NULL) == -1) {
+        perror("sigaction");
+        return 1;
+    }
 
-	printf ("SIGUSR1 was raised %d times\n", sigusr1_count);
+    kill(getpid(), SIGUSR1);
+    kill(getpid(), SIGUSR1);
 
-	return 0;
+    printf("SIGUSR1 was raised %d times\n", sigusr1_count);
+    return 0;
 }

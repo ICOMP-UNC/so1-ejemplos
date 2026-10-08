@@ -23,7 +23,7 @@ int main()
   signal(SIGALRM, handler);  
 
   /* send SIGALRM in 1 second */
-  alarm(5); 
+  alarm(1); 
 
   while (1) { 
     /* handler returns here */ 
